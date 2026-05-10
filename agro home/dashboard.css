@@ -1,0 +1,235 @@
+/* dashboard.css - Main Dashboard Layout */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8edf2 100%);
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ========== TOP BAR STYLES ========== */
+.top-bar {
+    background: linear-gradient(135deg, #0a2e1c 0%, #1a4a2a 50%, #0d371e 100%);
+    color: white;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#toggle-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    width: 45px;
+    height: 45px;
+}
+
+#toggle-btn:hover {
+    background: rgba(255, 215, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.brand {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff, #ffd700);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.brand span {
+    color: #ffd700;
+    background: none;
+    -webkit-background-clip: unset;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.user-profile:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.user-id {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.user-status {
+    font-size: 0.7rem;
+    opacity: 0.9;
+    position: relative;
+    padding-left: 12px;
+}
+
+.user-status::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: #4caf50;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+    70% { box-shadow: 0 0 0 8px rgba(76, 175, 80, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+}
+
+.profile-icon {
+    font-size: 2.2rem;
+    color: #ffd700;
+}
+
+/* ========== DASHBOARD WRAPPER ========== */
+.dashboard-wrapper {
+    display: flex;
+    margin-top: 75px;
+    height: calc(100vh - 75px);
+}
+
+/* ========== SIDEBAR ========== */
+.sidebar {
+    width: 300px;
+    background: transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.sidebar.collapsed {
+    width: 0;
+}
+
+#nav-iframe {
+    width: 300px;
+    height: 100%;
+    border: none;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.sidebar.collapsed #nav-iframe {
+    margin-left: -300px;
+}
+
+/* ========== MAIN CONTENT ========== */
+.main-content {
+    flex: 1;
+    padding: 1.5rem;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8edf2 100%);
+}
+
+#dash-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .top-bar {
+        padding: 0 1rem;
+    }
+
+    .brand {
+        font-size: 1.3rem;
+    }
+
+    .user-details {
+        display: none;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: 0;
+        z-index: 999;
+        width: 0;
+    }
+
+    .sidebar.collapsed {
+        width: 280px;
+    }
+
+    .sidebar.collapsed #nav-iframe {
+        margin-left: 0;
+        width: 280px;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+}
+
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e8edf2;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #2d5a3b, #1e3c2c);
+    border-radius: 10px;
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "workerId": "AF-2024",
+    "password": "12345",
+    "role": "worker"
+  },
+  {
+    "workerId": "AF-ADMIN",
+    "password": "admin123",
+    "role": "admin"
+  }
+]

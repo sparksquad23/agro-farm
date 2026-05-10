@@ -1,0 +1,386 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f5f7fa;
+    padding: 20px;
+}
+
+/* 🌿 Container */
+.areas-container {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.areas-container h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1a3c34;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.areas-container p {
+    color: #6c757d;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+/* 🧱 Grid - Professional Layout */
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+/* 🎴 Professional Card Design */
+.area-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+}
+
+.area-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+/* Image Container - Modern Aspect Ratio */
+.crop-image {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.crop-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.area-card:hover .crop-image img {
+    transform: scale(1.08);
+}
+
+/* Modern Overlay with Crop Name */
+.crop-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+.crop-name-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 16px;
+    z-index: 2;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1a3c34;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Card Content - Clean Typography */
+.card-content {
+    padding: 20px;
+    background: white;
+}
+
+.card-content h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0;
+    line-height: 1.4;
+    letter-spacing: -0.3px;
+}
+
+/* Optional: Remove crop name from card content if using badge */
+.card-content .crop-name {
+    display: none;
+}
+
+/* 📊 Modal - Professional Design */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-box {
+    background: white;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 85vh;
+    border-radius: 16px;
+    position: relative;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Close Button - Modern */
+.close-modal {
+    position: sticky;
+    top: 15px;
+    right: 15px;
+    float: right;
+    border: none;
+    background: white;
+    color: #666;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.close-modal:hover {
+    background: #fee2e2;
+    color: #dc2626;
+    transform: scale(1.05);
+}
+
+/* Modal Content Padding */
+.modal-box > :not(.close-modal) {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.modal-box h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1a3c34;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+/* Modal Crop Image */
+.modal-crop-image {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin: 20px 0;
+    background: #f0f0f0;
+}
+
+.modal-crop-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.modal-crop-name {
+    font-size: 1rem;
+    padding: 8px 16px;
+    background: #f0fdf4;
+    border-radius: 8px;
+    color: #166534;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+/* Details Grid - Clean */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.details-grid p {
+    padding: 10px 12px;
+    background: #f8fafc;
+    border-radius: 8px;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #334155;
+    border: 1px solid #e2e8f0;
+}
+
+.details-grid p strong {
+    color: #0f172a;
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+/* Modal Sections */
+.modal-box h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 24px 0 12px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.modal-box ul {
+    padding-left: 20px;
+    margin: 12px 0 20px 0;
+}
+
+.modal-box li {
+    margin-bottom: 8px;
+    color: #475569;
+    font-size: 0.9rem;
+}
+
+.modal-box hr {
+    margin: 24px 0;
+    border: none;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.image-gallery img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: 1px solid #e2e8f0;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Farm Notes */
+.farm-notes {
+    background: #fffbeb;
+    padding: 16px;
+    border-radius: 8px;
+    border-left: 3px solid #f59e0b;
+    margin: 20px 0;
+    font-size: 0.9rem;
+    color: #78350f;
+}
+
+/* Error Message */
+.error {
+    color: #dc2626;
+    text-align: center;
+    padding: 40px;
+    background: #fef2f2;
+    border-radius: 12px;
+    grid-column: 1 / -1;
+}
+
+/* Scrollbar Styling */
+.modal-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-box::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+.modal-box::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+.modal-box::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 12px;
+    }
+
+    .areas-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .modal-box > :not(.close-modal) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .modal-box h2 {
+        font-size: 1.4rem;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .image-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .crop-image {
+        height: 200px;
+    }
+}
