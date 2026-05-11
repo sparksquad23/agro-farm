@@ -1,0 +1,220 @@
+/* Info Card Overlay - Reduced opacity */
+.info-card-overlay {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    width: 320px;
+    animation: fadeInUp 0.2s ease;
+    z-index: 10000;
+    border: 1px solid rgba(232, 167, 53, 0.2);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.info-card {
+    position: relative;
+    padding: 1.2rem;
+}
+
+.close-info-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.close-info-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+
+.close-info-btn i {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Info Header */
+.info-header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.info-header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.info-header-text h3 {
+    color: #1a3a2a;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.info-crop-badge {
+    background: #e8a735;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+}
+
+/* Info Details */
+.info-details {
+    margin-bottom: 0.5rem;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 0.85rem;
+}
+
+.info-row i {
+    width: 20px;
+    color: #e8a735;
+    font-size: 1rem;
+}
+
+.info-row span {
+    color: #4a5b4e;
+    flex: 1;
+}
+
+/* Grid container styles */
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Info Button on Card */
+.info-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+}
+
+.info-btn i {
+    font-size: 1.2rem;
+}
+
+.info-btn:hover {
+    background: #e8a735;
+    transform: scale(1.1);
+}
+
+/* Card styles */
+.area-card {
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.area-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.crop-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.crop-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.area-card:hover .crop-image img {
+    transform: scale(1.05);
+}
+
+.crop-name-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #e8a735;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.card-content {
+    padding: 1.2rem;
+}
+
+.card-content h2 {
+    color: #1a3a2a;
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .areas-grid {
+        padding: 1rem;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .crop-image {
+        height: 180px;
+    }
+
+    .info-card-overlay {
+        width: 280px;
+        left: 10px !important;
+        right: 10px;
+    }
+}

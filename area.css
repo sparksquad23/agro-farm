@@ -1,0 +1,375 @@
+/* area.css - Area Details Page Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8edf2 100%);
+    min-height: 100vh;
+}
+
+.area-detail-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header Section - Corner Left */
+.area-header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 1px solid #eef2f0;
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    color: #1a3a2a;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    background: #f5f7fa;
+    border-color: #e8a735;
+    transform: translateX(-3px);
+}
+
+.area-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.area-title i {
+    font-size: 1.8rem;
+    color: #e8a735;
+}
+
+.area-title h1 {
+    font-size: 1.5rem;
+    color: #1a3a2a;
+    font-weight: 600;
+}
+
+.location-badge {
+    background: #fef8f0;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #e8a735;
+    font-size: 0.85rem;
+}
+
+/* Summary Section */
+.summary-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.summary-card {
+    background: white;
+    padding: 1.2rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.summary-icon {
+    width: 50px;
+    height: 50px;
+    background: #fef8f0;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.summary-icon i {
+    font-size: 1.8rem;
+    color: #e8a735;
+}
+
+.summary-info h4 {
+    font-size: 0.75rem;
+    color: #8aa08e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.3rem;
+}
+
+.summary-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a3a2a;
+}
+
+.summary-unit {
+    font-size: 0.8rem;
+    color: #8aa08e;
+    font-weight: normal;
+}
+
+/* Sensors Section */
+.sensors-section {
+    background: white;
+    border-radius: 24px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.sensors-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f0f2f0;
+}
+
+.sensors-header h2 {
+    color: #1a3a2a;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sensor-count-badge {
+    background: #eef4ec;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: #2d5a3b;
+}
+
+/* Sensor Cards Grid */
+.sensors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Individual Sensor Card */
+.sensor-card {
+    background: #f8f9fc;
+    border-radius: 20px;
+    padding: 1.2rem;
+    transition: all 0.3s ease;
+    border: 1px solid #eef2f0;
+}
+
+.sensor-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: #e8a735;
+}
+
+.sensor-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #eef2f0;
+}
+
+.sensor-header i {
+    font-size: 1.6rem;
+    color: #e8a735;
+}
+
+.sensor-info {
+    flex: 1;
+}
+
+.sensor-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1a3a2a;
+}
+
+.sensor-id {
+    font-size: 0.7rem;
+    color: #8aa08e;
+}
+
+/* Sensor Readings - Direct display */
+.sensor-readings {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.reading-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #eef2f0;
+}
+
+.reading-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #5a7c5e;
+}
+
+.reading-label i {
+    font-size: 1rem;
+    width: 20px;
+}
+
+.reading-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a3a2a;
+}
+
+.reading-unit {
+    font-size: 0.7rem;
+    color: #8aa08e;
+    font-weight: normal;
+}
+
+/* No Sensors */
+.no-sensors {
+    text-align: center;
+    padding: 3rem;
+    color: #8aa08e;
+}
+
+.no-sensors i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #e8a735;
+}
+
+/* All Areas Grid (when no area selected) */
+.all-areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.area-select-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #eef2f0;
+    text-align: center;
+}
+
+.area-select-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    border-color: #e8a735;
+}
+
+.area-select-card i {
+    font-size: 2.5rem;
+    color: #e8a735;
+    margin-bottom: 1rem;
+}
+
+.area-select-card h3 {
+    color: #1a3a2a;
+    margin-bottom: 0.3rem;
+}
+
+.area-select-card p {
+    color: #8aa08e;
+    font-size: 0.85rem;
+}
+
+/* Loading & Error States */
+.loading, .error-state {
+    text-align: center;
+    padding: 4rem;
+    background: white;
+    border-radius: 20px;
+}
+
+.loading i, .error-state i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.loading i {
+    color: #e8a735;
+    animation: spin 1s linear infinite;
+}
+
+.error-state i {
+    color: #d9534f;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .summary-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .area-detail-container {
+        padding: 1rem;
+    }
+
+    .area-header-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .summary-section {
+        grid-template-columns: 1fr;
+    }
+
+    .sensors-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .area-title h1 {
+        font-size: 1.2rem;
+    }
+}
